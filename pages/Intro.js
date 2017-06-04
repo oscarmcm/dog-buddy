@@ -8,11 +8,6 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Intro extends Component {
 
-  onSkipBtnHandle = (index) => {
-    Alert.alert('Skip');
-    console.log(index);
-  }
-
   doneBtnHandle = () => {
     Actions.Login
   }
@@ -20,7 +15,7 @@ export default class Intro extends Component {
   render() {
     return (
       <AppIntro
-        onSkipBtnClick={this.onSkipBtnHandle}
+        showSkipButton={false}
         onDoneBtnClick={Actions.Login}
         pageArray={pageArray}
       />
