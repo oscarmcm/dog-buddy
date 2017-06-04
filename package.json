@@ -9,7 +9,9 @@
 	"dependencies": {
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.2",
-		"react-native-app-intro": "^1.1.5"
+		"react-native-app-intro": "^1.1.5",
+		"react-native-router-flux": "^3.39.2",
+		"react-native-tabs": "^1.0.9"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
