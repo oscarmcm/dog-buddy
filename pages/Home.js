@@ -6,11 +6,12 @@ import {StyleSheet, Text, View} from 'react-native';
 import Tabs from 'react-native-tabs';
 
 export default class Home extends Component {
+
   constructor(props){
     super(props);
     this.state = {page:'second'};
   }
-  
+
   render() {
     return (
       <View style={styles.container}>
