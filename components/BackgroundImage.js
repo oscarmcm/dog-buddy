@@ -14,11 +14,12 @@ const styles = StyleSheet.create({
 
 export default class BackgroundImage extends Component {
 
-    render() {
-        return (
-          <Image source={this.props.path} style={styles.backgroundImage}>
-            {this.props.children}
-          </Image>
-        )
-    }
+  render() {
+    return (
+      <Image source={this.props.path} style={styles.backgroundImage}>
+        {this.props.children}
+      </Image>
+    )
+  }
+
 }

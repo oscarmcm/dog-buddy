@@ -88,6 +88,12 @@ append-transform@^0.4.0:
   dependencies:
     default-require-extensions "^1.0.0"
 
+apsl-react-native-button@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/apsl-react-native-button/-/apsl-react-native-button-3.0.2.tgz#705d5658b59b615cf0c3d62f0c40b80d1d2c9f81"
+  dependencies:
+    lodash.isequal "^4.1.4"
+
 are-we-there-yet@~1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-1.1.4.tgz#bb5dca382bb94f05e15194373d16fd3ba1ca110d"
@@ -2388,7 +2394,7 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
-lodash.isequal@^4.5.0:
+lodash.isequal@^4.1.4, lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
@@ -2949,6 +2955,10 @@ react-devtools-core@^2.0.8:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-animatable@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.2.1.tgz#2758326b298dddecc8c065446f4185174bdaa4e3"
+
 react-native-app-intro@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/react-native-app-intro/-/react-native-app-intro-1.1.5.tgz#34a2d2265b2d654d31bae743c404856c37448692"
@@ -2966,10 +2976,6 @@ react-native-experimental-navigation@0.27.x:
     clamp "^1.0.1"
     fbjs "^0.8.1"
 
-react-native-linear-gradient@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.0.0.tgz#7442c00e1fcd9fca329119dcbaf744d12bcd1b5a"
-
 react-native-router-flux@^3.39.2:
   version "3.39.2"
   resolved "https://registry.yarnpkg.com/react-native-router-flux/-/react-native-router-flux-3.39.2.tgz#f5373136440e627dfc39edc61cb4bf54581245e0"
@@ -2978,6 +2984,10 @@ react-native-router-flux@^3.39.2:
     react-native-experimental-navigation "0.27.x"
     react-native-tabs "^1.0.9"
     react-static-container "1.0.1"
+
+react-native-swiper@^1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/react-native-swiper/-/react-native-swiper-1.5.4.tgz#a85535b5374ef8d605a7a720e447ac46816ac448"
 
 "react-native-swiper@git+https://github.com/FuYaoDe/react-native-swiper.git":
   version "1.4.4"
