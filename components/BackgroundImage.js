@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class BackgroundImage extends Component {
+class BackgroundImage extends Component {
 
   render() {
     return (
@@ -23,3 +23,5 @@ export default class BackgroundImage extends Component {
   }
 
 }
+
+export default BackgroundImage;
