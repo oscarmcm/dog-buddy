@@ -14,13 +14,13 @@ export default class dogbuddy extends Component {
 
   render() {
     let showIntro = false;
-    let userAuth = true;
-    let showHome = showIntro && userAuth;
+    let showAuth = true; // remember switch back again
+    let showHome = showIntro && showAuth;
     return (
       <Router>
         <Scene key="root">
           <Scene key="Intro" component={Intro} hideNavBar={true} initial={ showIntro } />
-          <Scene key="Login" component={Login} hideNavBar={true} initial={ userAuth } />
+          <Scene key="Login" component={Login} hideNavBar={true} initial={ showAuth } />
           <Scene key="Home" component={Home} hideNavBar={true} initial={ showHome } />
         </Scene>
       </Router>
