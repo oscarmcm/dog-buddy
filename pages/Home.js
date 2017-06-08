@@ -1,53 +1,56 @@
 'use strict'
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-import Tabs from 'react-native-tabs';
+import BarTabs from '../components/BarTabs';
 
-export default class Home extends Component {
+import Swiper from 'react-native-swiper';
 
-  constructor(props){
-    super(props);
-    this.state = {page:'second'};
-  }
-
+class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Tabs
-          selected={this.state.page}
-          style={{backgroundColor:'white'}}
-          selectedStyle={{color:'red'}}
-          onSelect={el=>this.setState({page:el.props.name})}>
-            <Text name="home">Home</Text>
-            <Text name="report" selectedIconStyle={{borderTopWidth:2,borderTopColor:'red'}}>Reports</Text>
-            <Text name="add">Add</Text>
-            <Text name="fourth" selectedStyle={{color:'green'}}>Time</Text>
-            <Text name="config">Config</Text>
-        </Tabs>
-        <Text style={styles.welcome}>Welcome to React Native</Text>
-        <Text style={styles.instructions}>Selected page: {this.state.page}</Text>
+        <Swiper style={styles.wrapper} showsButtons={false} loop={false} height={'90%'}>
+          <View style={styles.slide1}>
+            <Text style={styles.text}>Hello Swiper</Text>
+          </View>
+          <View style={styles.slide2}>
+            <Text style={styles.text}>Beautiful</Text>
+          </View>
+          <View style={styles.slide3}>
+            <Text style={styles.text}>And simple</Text>
+          </View>
+        </Swiper>
+        <BarTabs selected={'home'} />
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F5FCFF'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  wrapper: {},
+  slide1: {
+    flex: 1,
+    backgroundColor: '#9DD6EB'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  slide2: {
+    flex: 1,
+    backgroundColor: '#97CAE5'
   },
+  slide3: {
+    flex: 1,
+    backgroundColor: '#92BBD9'
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold'
+  }
 });
+
+export default Home;
