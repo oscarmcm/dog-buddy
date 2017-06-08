@@ -11,7 +11,10 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Swiper style={styles.wrapper} showsButtons={false} loop={false} height={'90%'}>
+        <Swiper style={styles.wrapper} 
+                paginationStyle={styles.pagination} 
+                showsButtons={false} 
+                loop={false}>
           <View style={styles.slide1}>
             <Text style={styles.text}>Hello Swiper</Text>
           </View>
@@ -33,7 +36,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F5FCFF'
   },
-  wrapper: {},
+  wrapper: {
+    paddingBottom: 25,  
+    paddingTop: 10,
+  },
+  pagination: {
+    height: 20,
+    position: 'absolute',
+    top: 0,
+  },
   slide1: {
     flex: 1,
     backgroundColor: '#9DD6EB'
