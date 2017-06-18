@@ -55,7 +55,7 @@ class BarTabs extends Component {
           <Text name="report" onPress={Actions.Report}>Reports</Text>
           <Button name="add" onPress={Actions.Add} style={styles.tabButton}>Add</Button>
           <Text name="foo" selectedStyle={{color: 'green'}}>Time</Text>
-          <Text name="config">Config</Text>
+          <Button name="config" onPress={Actions.Setting}>Config</Button>
         </Tabs>
       </View>
     );

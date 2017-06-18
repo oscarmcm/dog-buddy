@@ -9,6 +9,7 @@ import Intro from './pages/Intro';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Add from './pages/Add';
+import Setting from './pages/Setting';
 
 export default class dogbuddy extends Component {
 
@@ -23,6 +24,7 @@ export default class dogbuddy extends Component {
           <Scene key="Login" component={Login} initial={ showAuth } />
           <Scene key="Home" component={Home} initial={ showHome } duration={0} />
           <Scene key="Add" component={Add} duration={0} />
+          <Scene key="Setting" component={Setting} duration={0} />
         </Scene>
       </Router>
     );
