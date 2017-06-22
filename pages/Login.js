@@ -1,9 +1,9 @@
 'use strict'
 
-import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
 
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 import Button from 'apsl-react-native-button'
 import * as Animatable from 'react-native-animatable';
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   loginForm: {
-    height: '70%', 
+    height: '70%',
     backgroundColor: '#FAFAFA',
     position: 'absolute',
     bottom: 0,

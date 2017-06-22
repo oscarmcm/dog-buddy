@@ -16,7 +16,7 @@ class BackgroundImage extends Component {
 
   render() {
     return (
-      <Image source={this.props.path} style={styles.backgroundImage}>
+      <Image source={this.props.path} style={this.props.styles || styles.backgroundImage}>
         {this.props.children}
       </Image>
     )

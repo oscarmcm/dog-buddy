@@ -12,8 +12,11 @@
 		"react-native": "0.44.2",
 		"react-native-animatable": "^1.2.1",
 		"react-native-app-intro": "^1.1.5",
-		"react-native-router-flux": "^3.39.2",
 		"react-native-settings-list": "^1.4.0",
+		"react-native-calendars": "^1.2.22",
+		"react-native-gifted-form": "^0.0.14",
+		"react-native-router-flux": "^3.40.1",
+		"react-native-segmented-control-tab": "^3.0.2",
 		"react-native-swiper": "^1.5.4",
 		"react-native-tabs": "^1.0.9"
 	},
