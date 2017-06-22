@@ -1,30 +1,17 @@
 'use strict'
 
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, Alert} from 'react-native';
+import {View} from 'react-native';
 
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 import Tabs from 'react-native-tabs';
 import Button from 'apsl-react-native-button'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  selectedTab: {
-    borderTopWidth: 2,
-    borderTopColor: 'red'
-  },
-  tabButton: {
-    borderRadius: 0,
-    borderWidth: 0,
-    marginBottom: 0,
-    height: '100%',
-    borderColor: 'red',
-  }
-});
+import CommonStyle from '../styles/common';
+import Container from './Container';
 
-class BarTabs extends Component {
+
+export default class BarTabs extends Component {
 
   constructor(props) {
     super(props);
@@ -33,33 +20,23 @@ class BarTabs extends Component {
     };
   }
 
-  switchScene(key) {
-    switch (key) {
-      case 'home':
-        Alert.alert(key)
-        Actions.Home;
-      case 'add':
-        Actions.Add;
-    }
-  }
-
   render() {
     return (
-      <View style={styles.container}>
+      <Container>
         <Tabs
           selected={this.props.selected}
           style={{backgroundColor: 'white'}}
-          selectedIconStyle={styles.selectedTab}
+          selectedIconStyle={CommonStyle.SelectedTab}
           onSelect={el=>this.setState({page:el.props.name})}>
-          <Button name="home" onPress={Actions.Home} style={styles.tabButton}>Home</Button>
-          <Text name="report" onPress={Actions.Report}>Reports</Text>
-          <Button name="add" onPress={Actions.Add} style={styles.tabButton}>Add</Button>
-          <Text name="foo" selectedStyle={{color: 'green'}}>Time</Text>
-          <Text name="config">Config</Text>
+
+          <Button name="home" onPress={Actions.Home} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Home</Button>
+          <Button name="report" onPress={Actions.Report} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Reports</Button>
+          <Button name="add" onPress={Actions.Add} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Add</Button>
+          <Button name="cal" onPress={Actions.Calendar} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Calendar</Button>
+          <Button name="config" style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Config</Button>
+
         </Tabs>
-      </View>
+      </Container>
     );
   }
 }
-
-export default BarTabs;

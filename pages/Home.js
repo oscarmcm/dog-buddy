@@ -4,17 +4,18 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 import BarTabs from '../components/BarTabs';
+import Container from '../components/Container';
 
 import Swiper from 'react-native-swiper';
 
-class Home extends Component {
+export default class Home extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Swiper style={styles.wrapper} 
-                paginationStyle={styles.pagination} 
-                showsButtons={false} 
-                loop={false}>
+      <Container style={styles.container}>
+        <Swiper style={styles.wrapper}
+          paginationStyle={styles.pagination}
+          showsButtons={false}
+          loop={false}>
           <View style={styles.slide1}>
             <Text style={styles.text}>Hello Swiper</Text>
           </View>
@@ -26,18 +27,17 @@ class Home extends Component {
           </View>
         </Swiper>
         <BarTabs selected={'home'} />
-      </View>
+      </Container>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#F5FCFF'
   },
   wrapper: {
-    paddingBottom: 25,  
+    paddingBottom: 25,
     paddingTop: 10,
   },
   pagination: {
@@ -63,5 +63,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-
-export default Home;
