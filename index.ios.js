@@ -11,6 +11,7 @@ import Intro from './pages/Intro';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Add from './pages/Add';
+import Setting from './pages/Setting';
 import Calendar from './pages/Calendar';
 
 export default class dogbuddy extends Component {
@@ -28,6 +29,7 @@ export default class dogbuddy extends Component {
           <Scene key="Home" component={Home} initial={ showHome } duration={0} />
           <Scene key="Add" component={Add} duration={0} />
           <Scene key="Calendar" component={Calendar} duration={0} />
+          <Scene key="Setting" component={Setting} duration={0} />
           <Scene key='FormModal' component={FormModal} direction='vertical' rightTitle='Save' hideNavBar={false} />
         </Scene>
       </Router>

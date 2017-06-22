@@ -28,13 +28,11 @@ export default class BarTabs extends Component {
           style={{backgroundColor: 'white'}}
           selectedIconStyle={CommonStyle.SelectedTab}
           onSelect={el=>this.setState({page:el.props.name})}>
-
           <Button name="home" onPress={Actions.Home} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Home</Button>
           <Button name="report" onPress={Actions.Report} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Reports</Button>
           <Button name="add" onPress={Actions.Add} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Add</Button>
           <Button name="cal" onPress={Actions.Calendar} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Calendar</Button>
-          <Button name="config" style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Config</Button>
-
+          <Button name="config" onPress={Actions.Setting}  style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Config</Button>
         </Tabs>
       </Container>
     );

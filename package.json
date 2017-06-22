@@ -12,6 +12,7 @@
 		"react-native": "0.44.2",
 		"react-native-animatable": "^1.2.1",
 		"react-native-app-intro": "^1.1.5",
+		"react-native-settings-list": "^1.4.0",
 		"react-native-calendars": "^1.2.22",
 		"react-native-gifted-form": "^0.0.14",
 		"react-native-router-flux": "^3.40.1",
