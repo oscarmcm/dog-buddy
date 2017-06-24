@@ -22,7 +22,6 @@ export default class BarTabs extends Component {
 
   render() {
     return (
-      <Container>
         <Tabs
           selected={this.props.selected}
           style={{backgroundColor: 'white'}}
@@ -34,7 +33,6 @@ export default class BarTabs extends Component {
           <Button name="cal" onPress={Actions.Calendar} style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Calendar</Button>
           <Button name="config" onPress={Actions.Setting}  style={CommonStyle.TabButton} textStyle={CommonStyle.TabText}>Config</Button>
         </Tabs>
-      </Container>
     );
   }
 }
