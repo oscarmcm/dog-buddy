@@ -29,7 +29,7 @@ export default class Calendar extends Component {
           //theme={{calendarBackground: 'red'}}
           //renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
         />
-        <BarTabs selected={'cal'} />
+        <BarTabs selected={'cal'}/>
       </View>
     );
   }
