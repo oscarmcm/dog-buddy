@@ -3,28 +3,33 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
+import Swiper from 'react-native-swiper';
+
 import BarTabs from '../components/BarTabs';
 import Container from '../components/Container';
 
-import Swiper from 'react-native-swiper';
+import realm from '../realm';
 
 export default class Home extends Component {
+
   render() {
+    let foo = []
+    let pets = realm.objects('Pet');
+    console.log(pets)
+    pets.forEach(function(pet) {
+      return foo.push(
+        <View style={styles.slide1}>
+          <Text style={styles.text}>{pet.name}</Text>
+        </View>
+      )
+    })
     return (
       <Container style={styles.container}>
         <Swiper style={styles.wrapper}
           paginationStyle={styles.pagination}
           showsButtons={false}
           loop={false}>
-          <View style={styles.slide1}>
-            <Text style={styles.text}>Hello Swiper</Text>
-          </View>
-          <View style={styles.slide2}>
-            <Text style={styles.text}>Beautiful</Text>
-          </View>
-          <View style={styles.slide3}>
-            <Text style={styles.text}>And simple</Text>
-          </View>
+          {foo}
         </Swiper>
         <BarTabs selected={'home'} />
       </Container>

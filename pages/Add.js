@@ -12,11 +12,8 @@ import AddWeight from '../components/AddWeight';
 
 export default class Add extends Component {
 
-  constructor(){
-    super()
-    this.state = {
-      selectedIndex: 0,
-    };
+  state = {
+    selectedIndex: 0,
   }
 
   renderForm = (index) => {
@@ -33,13 +30,10 @@ export default class Add extends Component {
   }
 
   handleIndexChange = (index) => {
-    this.setState({
-      ...this.state,
-      selectedIndex: index,
-    });
+    this.setState({selectedIndex: index,});
   }
 
-  render() {
+  render = () => {
     return (
       <Container style={styles.container}>
         <Animatable.View animation="fadeInUpBig" duration={400} useNativeDriver style={{flex:1}}>

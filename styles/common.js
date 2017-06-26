@@ -6,7 +6,10 @@ const CommonStyle = StyleSheet.create({
   Container: {
     flex: 1,
   },
-  SelectedTab: {
+  ContainerNavBar: {
+    paddingTop: 60,
+  },
+  TabSelected: {
     borderTopWidth: 2,
     borderTopColor: 'red'
   },

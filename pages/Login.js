@@ -11,22 +11,23 @@ import BackgroundImage from '../components/BackgroundImage'
 
 export default class Login extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      showSignIn: false,
-      showSignUp: false
-    };
+  state = {
+    showSignIn: false,
+    showSignUp: false
   }
 
-  onSignIn() {
+  handleLogin = () => {
+    return Actions.Home
+  }
+
+  onSignIn = () => {
     this.setState({
       showSignIn: !(this.state.showSignIn),
       showSignUp: false,
     })
   }
 
-  onSignUp() {
+  onSignUp = () => {
     this.setState({
       showSignIn: false,
       showSignUp: !(this.state.showSignUp)
@@ -39,16 +40,18 @@ export default class Login extends Component {
         {this.state.showSignIn ?
           <Animatable.View animation="fadeInUpBig" duration={400} useNativeDriver style={styles.loginForm}>
             <Text>Aqui va el login form</Text>
+            <Button onPress={this.handleLogin()}  textStyle={styles.text}>Foo</Button>
           </Animatable.View>
         : null}
         {this.state.showSignUp ?
           <Animatable.View animation="fadeInUpBig" duration={400} useNativeDriver style={styles.loginForm}>
             <Text>Aqui va el registro form</Text>
+            <Button onPress={this.handleLogin()} style={styles.button} textStyle={styles.text}>Foo</Button>
           </Animatable.View>
         : null}
         <View style={styles.container}>
-          <Button onPress={this.onSignIn.bind(this)} style={styles.button} textStyle={styles.text}>Sign In</Button>
-          <Button onPress={this.onSignUp.bind(this)} style={styles.button} textStyle={styles.text}>Sign Up</Button>
+          <Button onPress={this.onSignIn} style={styles.button} textStyle={styles.text}>Sign In</Button>
+          <Button onPress={this.onSignUp} style={styles.button} textStyle={styles.text}>Sign Up</Button>
         </View>
       </BackgroundImage>
     )
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
   },
   loginForm: {
     height: '70%',
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#CACACA',
     position: 'absolute',
     bottom: 0,
     left: 0,
