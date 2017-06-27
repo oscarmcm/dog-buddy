@@ -5,6 +5,8 @@ import {AppRegistry} from 'react-native';
 
 import {Scene, Router} from 'react-native-router-flux';
 
+import Firebase from "./includes/firebase";
+
 import FormModal from './components/FormModal';
 
 import Intro from './pages/Intro';
@@ -16,9 +18,14 @@ import Calendar from './pages/Calendar';
 
 export default class dogbuddy extends Component {
 
+  constructor(props) {
+    super(props);
+    Firebase.initialise();
+  }
+
   render() {
     let showIntro = false;
-    let showAuth = false; // remember switch back again
+    let showAuth = true; // remember switch back again
     let showHome = (showIntro === showAuth);
 
     return (
