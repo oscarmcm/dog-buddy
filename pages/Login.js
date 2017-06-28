@@ -6,9 +6,10 @@ import {StyleSheet, View, Text} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import Button from 'apsl-react-native-button'
 import * as Animatable from 'react-native-animatable';
-import * as firebase from 'firebase';
-import { GiftedForm, GiftedFormManager } from 'react-native-gifted-form'
+import * as Firebase from 'firebase';
+import {GiftedForm, GiftedFormManager} from 'react-native-gifted-form'
 
+import FBLoginButton from '../components/FBLoginButton'
 import BackgroundImage from '../components/BackgroundImage'
 
 export default class Login extends Component {
@@ -103,7 +104,7 @@ export default class Login extends Component {
                 }}
                 onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
                   if (isValid === true) {
-                    firebase.auth().signInWithEmailAndPassword(values.emailAddress, values.password)
+                    Firebase.auth().signInWithEmailAndPassword(values.emailAddress, values.password)
                     .then( response => {
                       postSubmit();
                       GiftedFormManager.reset('signInForm');
@@ -121,6 +122,7 @@ export default class Login extends Component {
                 title='By signing up, you agree to the Terms of Service and Privacy Policity.'
               />
               <GiftedForm.HiddenWidget name='tos' value={true} />
+              <FBLoginButton/>
             </GiftedForm>
           </Animatable.View>
         : null}
@@ -185,7 +187,7 @@ export default class Login extends Component {
                 }}
                 onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
                   if (isValid === true) {
-                    firebase.auth().createUserWithEmailAndPassword(values.emailAddress, values.password)
+                    Firebase.auth().createUserWithEmailAndPassword(values.emailAddress, values.password)
                     .then( response => {
                       postSubmit();
                       GiftedFormManager.reset('signUpForm');
@@ -203,6 +205,7 @@ export default class Login extends Component {
                 title='By signing up, you agree to the Terms of Service and Privacy Policity.'
               />
               <GiftedForm.HiddenWidget name='tos' value={true} />
+              <FBLoginButton />
             </GiftedForm>
           </Animatable.View>
         : null}
