@@ -24,4 +24,17 @@ const VetSchema = {
   }
 };
 
-export default new Realm({schema: [PetSchema, VetSchema]});
+const AppointmentSchema = {
+  name: 'Appointment',
+  properties: {
+    date: 'date',
+    title: 'string',
+    description: 'string',
+  }
+}
+
+export default new Realm(
+  {schema:
+    [PetSchema, VetSchema, AppointmentSchema]
+  }
+);

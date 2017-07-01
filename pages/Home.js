@@ -13,11 +13,11 @@ import realm from '../realm';
 export default class Home extends Component {
 
   render() {
-    let foo = []
+    let petsView = []
     let pets = realm.objects('Pet');
     console.log(pets)
     pets.forEach(function(pet) {
-      return foo.push(
+      return petsView.push(
         <View style={styles.slide1}>
           <Text style={styles.text}>{pet.name}</Text>
         </View>
@@ -29,7 +29,7 @@ export default class Home extends Component {
           paginationStyle={styles.pagination}
           showsButtons={false}
           loop={false}>
-          {foo}
+          {petsView}
         </Swiper>
         <BarTabs selected={'home'} />
       </Container>
