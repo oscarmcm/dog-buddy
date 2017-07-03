@@ -1,18 +1,22 @@
 'use strict'
 
-import React, { Component } from 'react';
-import { View, Text, Alert } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, Alert} from 'react-native';
 
 import AppIntro from 'react-native-app-intro';
-import { Actions } from 'react-native-router-flux';
+import {Actions} from 'react-native-router-flux';
 
 export default class Intro extends Component {
+
+  finishIntro = () => {
+    return Actions.Login
+  }
 
   render() {
     return (
       <AppIntro
-        onSkipBtnClick={Actions.Login}
-        onDoneBtnClick={Actions.Login}
+        onSkipBtnClick={this.finishIntro()}
+        onDoneBtnClick={this.finishIntro()}
         pageArray={pageArray}
       />
     )
