@@ -10,6 +10,8 @@ import * as Firebase from 'firebase';
 import {GiftedForm, GiftedFormManager} from 'react-native-gifted-form'
 
 import FBLoginButton from '../components/FBLoginButton'
+import GoogleLoginButton from '../components/GoogleLoginButton'
+
 import BackgroundImage from '../components/BackgroundImage'
 
 export default class Login extends Component {
@@ -206,6 +208,7 @@ export default class Login extends Component {
               />
               <GiftedForm.HiddenWidget name='tos' value={true} />
               <FBLoginButton />
+              <GoogleLoginButton />
             </GiftedForm>
           </Animatable.View>
         : null}
