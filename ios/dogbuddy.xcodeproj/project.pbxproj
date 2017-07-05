@@ -37,17 +37,20 @@
 		2DCD954D1E0B4F2C00145EB5 /* dogbuddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* dogbuddyTests.m */; };
 		54EE418E3F964B35A474D364 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 407F712F309446EFB6D07C38 /* libz.tbd */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		82224EBCC4714D3FAF95CCB7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A216997FB34FD59908D2EB /* libz.tbd */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8352AE586DF8482E9E36B030 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F229B2B1051B428598D6BD30 /* AddressBook.framework */; };
 		9291B34A4C24451A98E5FE1C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781D9FCE39B44A199249B458 /* SystemConfiguration.framework */; };
 		A738E18F5FC4460D9881D181 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B46828865B4C5BA8698D38 /* libRNGoogleSignin.a */; };
 		A9D3B5F2B7ADA6AA72F6397B /* libPods-dogbuddyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E188F2CB16370568C457AE /* libPods-dogbuddyTests.a */; };
 		EDB2B402E7F0445EB30B2282 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C628EDB2B854F7A84F5EB61 /* SafariServices.framework */; };
+		F2FE71C639904554BB12E22D /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4D9CF3FB2A41D4AC0C08AA /* libRealmReact.a */; };
 		F57A1C641F0359BF00D36588 /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F57A1C631F0356C600D36588 /* libRCTFBLogin.a */; };
 		F57A1C681F035C0200D36588 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57A1C651F035C0200D36588 /* FBSDKCoreKit.framework */; };
 		F57A1C691F035C0200D36588 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57A1C661F035C0200D36588 /* FBSDKLoginKit.framework */; };
 		F57A1C6A1F035C0200D36588 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57A1C671F035C0200D36588 /* FBSDKShareKit.framework */; };
 		F5A6E7B11F0C8FD000136880 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A6E7B01F0C8FD000136880 /* GoogleService-Info.plist */; };
+		F5D0A39DC8944A71AF912361 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C2F1556B6384A8DA13310A1 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -254,6 +257,13 @@
 			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
 			remoteInfo = RNGoogleSignin;
 		};
+		F5A6E8041F0CBD8700136880 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92E01C61E8DC46AF9F79F02E /* RealmReact.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F60690131CA2766F0003FB26;
+			remoteInfo = RealmReact;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -282,11 +292,15 @@
 		2D02E47B1E0B4A5D006451C7 /* dogbuddy-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dogbuddy-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* dogbuddy-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "dogbuddy-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		407F712F309446EFB6D07C38 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5C2F1556B6384A8DA13310A1 /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		67A216997FB34FD59908D2EB /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		781D9FCE39B44A199249B458 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8C628EDB2B854F7A84F5EB61 /* SafariServices.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		92E01C61E8DC46AF9F79F02E /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
+		CB4D9CF3FB2A41D4AC0C08AA /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
 		D7B46828865B4C5BA8698D38 /* libRNGoogleSignin.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGoogleSignin.a; sourceTree = "<group>"; };
 		DC3F90B5B7351EAFFCC58F7F /* Pods-dogbuddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogbuddyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dogbuddyTests/Pods-dogbuddyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8E188F2CB16370568C457AE /* libPods-dogbuddyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dogbuddyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -335,6 +349,9 @@
 				9291B34A4C24451A98E5FE1C /* SystemConfiguration.framework in Frameworks */,
 				8352AE586DF8482E9E36B030 /* AddressBook.framework in Frameworks */,
 				079F2DA9AA5E06A834C82FCB /* libPods-dogbuddy.a in Frameworks */,
+				F2FE71C639904554BB12E22D /* libRealmReact.a in Frameworks */,
+				F5D0A39DC8944A71AF912361 /* libc++.tbd in Frameworks */,
+				82224EBCC4714D3FAF95CCB7 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +516,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7ED00156BF0947FDBFAD107B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C2F1556B6384A8DA13310A1 /* libc++.tbd */,
+				67A216997FB34FD59908D2EB /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +541,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				EAE1FB828CFB4A3F956ED17A /* RNGoogleSignin.xcodeproj */,
+				92E01C61E8DC46AF9F79F02E /* RealmReact.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -537,6 +564,7 @@
 				00E356EF1AD99517003FC87E /* dogbuddyTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2CEE6C02FD1599E6AF1CA83E /* Pods */,
+				7ED00156BF0947FDBFAD107B /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -581,6 +609,14 @@
 			isa = PBXGroup;
 			children = (
 				F5A6E7AF1F0C8E2500136880 /* libRNGoogleSignin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5A6E7E71F0CBD8700136880 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5A6E8051F0CBD8700136880 /* libRealmReact.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -749,6 +785,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = F5A6E7E71F0CBD8700136880 /* Products */;
+					ProjectRef = 92E01C61E8DC46AF9F79F02E /* RealmReact.xcodeproj */;
 				},
 				{
 					ProductGroup = F5A6E7911F0C8E2500136880 /* Products */;
@@ -953,6 +993,13 @@
 			fileType = archive.ar;
 			path = libRNGoogleSignin.a;
 			remoteRef = F5A6E7AE1F0C8E2500136880 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F5A6E8051F0CBD8700136880 /* libRealmReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRealmReact.a;
+			remoteRef = F5A6E8041F0CBD8700136880 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1187,7 +1234,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = dogbuddyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1214,7 +1261,7 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = dogbuddyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1242,7 +1289,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = dogbuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1265,7 +1312,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = dogbuddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1294,7 +1341,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = "dogbuddy-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1328,7 +1375,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				INFOPLIST_FILE = "dogbuddy-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

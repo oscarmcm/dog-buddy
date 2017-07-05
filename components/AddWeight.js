@@ -3,12 +3,12 @@
 import React, {Component} from 'react';
 
 import {Actions} from 'react-native-router-flux';
-import { GiftedForm, GiftedFormManager } from 'react-native-gifted-form';
+import {GiftedForm, GiftedFormManager} from 'react-native-gifted-form';
 
 import Container from './Container';
 
-
 export default class AddWeight extends Component {
+
   render() {
     return (
       <Container style={{paddingTop: 10}}>
@@ -43,6 +43,7 @@ export default class AddWeight extends Component {
           </GiftedForm.ModalWidget>
 
           <GiftedForm.SeparatorWidget />
+
           <GiftedForm.TextAreaWidget
             name='note'
             autoFocus={true}

@@ -16,22 +16,23 @@ import BackgroundImage from '../components/BackgroundImage'
 
 export default class Login extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      showSignIn: false,
-      showSignUp: false
-    };
+  state = {
+    showSignIn: false,
+    showSignUp: false
   }
 
-  onSignIn() {
+  handleLogin = () => {
+    return Actions.Home
+  }
+
+  onSignIn = () => {
     this.setState({
       showSignIn: !(this.state.showSignIn),
       showSignUp: false,
     })
   }
 
-  onSignUp() {
+  onSignUp = () => {
     this.setState({
       showSignIn: false,
       showSignUp: !(this.state.showSignUp)
@@ -226,7 +227,7 @@ const styles = StyleSheet.create({
   },
   loginForm: {
     height: '70%',
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#CACACA',
     position: 'absolute',
     bottom: 0,
     left: 0,

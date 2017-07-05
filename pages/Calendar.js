@@ -17,19 +17,20 @@ export default class Calendar extends Component {
   }
 
   render() {
+    const today = new Date();
     return (
       <View style={{flex:1}}>
         <Agenda
           items={this.state.items}
           loadItemsForMonth={this.loadItems.bind(this)}
-          selected={'2017-05-16'}
+          selected={today.toISOString().substring(0, 10)}
           renderItem={this.renderItem.bind(this)}
           renderEmptyDate={this.renderEmptyDate.bind(this)}
           rowHasChanged={this.rowHasChanged.bind(this)}
-          //theme={{calendarBackground: 'red'}}
-          //renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
+          // theme={{calendarBackground: 'red'}}
+          // renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
         />
-        <BarTabs selected={'cal'} />
+        <BarTabs selected={'cal'}/>
       </View>
     );
   }
