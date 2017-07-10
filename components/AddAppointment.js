@@ -7,12 +7,15 @@ import {GiftedForm, GiftedFormManager} from 'react-native-gifted-form';
 
 import Container from './Container';
 
+import realm from '../realm';
+
 export default class AddAppointment extends Component {
-  render() {
+
+  render = () => {
     return (
       <Container style={{paddingTop: 10}}>
         <GiftedForm
-          formName='addWeightForm'
+          formName='addAppointmentForm'
           openModal={(route) => {
             Actions.FormModal({
               title: route.getTitle(),
@@ -31,10 +34,19 @@ export default class AddAppointment extends Component {
             <GiftedForm.DatePickerIOSWidget name='date' scrollEnabled={false} />
           </GiftedForm.ModalWidget>
           <GiftedForm.TextAreaWidget
-            name='note'
+            name='description'
             autoFocus={true}
             placeholder='Something interesting about it' />
-          <GiftedForm.SubmitWidget title='Save' />
+          <GiftedForm.SubmitWidget title='Save'
+            onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
+              if (isValid === true) {
+                realm.write(() => { realm.create('Appointment', values);});
+                postSubmit();
+                GiftedFormManager.reset('addAppointmentForm');
+                return Actions.popTo('Home')
+              }
+            }}
+          />
         </GiftedForm>
       </Container>
     )

@@ -12,7 +12,7 @@ export default class Intro extends Component {
     return Actions.Login
   }
 
-  render() {
+  render = () => {
     return (
       <AppIntro
         onSkipBtnClick={this.finishIntro()}
