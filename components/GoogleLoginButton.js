@@ -6,6 +6,8 @@ import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 import {StyleSheet} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
+import FirebaseHelpers from "../includes/FirebaseHelpers";
+
 export default class GoogleLoginButton extends Component {
 
   componentDidMount() {
@@ -14,12 +16,11 @@ export default class GoogleLoginButton extends Component {
 
   firebaseGoogleLogin = (token) => {
     const credential = Firebase.auth.GoogleAuthProvider.credential(token);
-    Firebase.auth().signInWithCredential(credential)
-    .then( response => { 
+    FirebaseHelpers.logIn('google', {'credential': credential}).then( (user) => {
       Actions.Home();
     })
-    .catch( error => { 
-      console.log(error);
+    .catch(function (err) {
+      console.log(err);
     });
   }
 

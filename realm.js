@@ -7,7 +7,9 @@ const UserSchema = {
   properties: {
     name:  'string',
     email: 'string',
-    photo: {type: 'data', optional: true}
+    photo: {type: 'data', optional: true},
+    // login_method: 'string',
+    // firebase_id: 'string',
   }
 };
 

@@ -118,13 +118,15 @@ export default class Login extends Component {
                 }}
                 onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
                   if (isValid === true) {
-                    Firebase.auth().signInWithEmailAndPassword(values.emailAddress, values.password)
-                    .then( response => {
+                    FirebaseHelpers.logIn('email', {
+                      'email': values.emailAddress,
+                      'password': values.password
+                    }).then( (user) => {
                       postSubmit();
                       GiftedFormManager.reset('signInForm');
                       Actions.Home();
                     })
-                    .catch( error => {
+                    .catch(function (error) {
                       postSubmit([error.toString()]);
                     });
                   }

@@ -20,6 +20,39 @@ export default class FirebaseHelpers {
     }
 
     /**
+     * Log in user with Firebase
+     */
+    static logIn(method, params) {
+        return new Promise( (resolve, reject)  => {
+            switch(method) {
+              case 'email':
+                Firebase.auth().signInWithEmailAndPassword(params.email, params.password)
+                .then( user => {
+                  resolve(user);
+                })
+                .catch( error => {
+                  reject(Error(error.toString()));
+                });
+                break;
+              case 'facebook':
+              case 'google':
+                console.log(method);
+                Firebase.auth().signInWithCredential(params.credential)
+                .then( user => { 
+                  console.log(user);
+                  resolve(user);
+                })
+                .catch( error => { 
+                  reject(Error(error.toString()));
+                });
+                break;
+              default:
+                reject(Error('Not valid login method'));
+            }
+        });
+    }
+
+    /**
      * Gets the current logged in user if exist
      * Usage mode: 'user = FirebaseHelpers.currentUser()'
      */

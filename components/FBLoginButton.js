@@ -5,6 +5,8 @@ import * as Firebase from 'firebase';
 import {FBLogin, FBLoginManager} from 'react-native-facebook-login';
 import {Actions} from 'react-native-router-flux';
 
+import FirebaseHelpers from "../includes/FirebaseHelpers";
+
 export default class FBLoginButton extends Component {
   render() {
     return (
@@ -14,13 +16,12 @@ export default class FBLoginButton extends Component {
         loginBehavior={FBLoginManager.LoginBehaviors.Native}
         onLogin={ data => {
           const credential = Firebase.auth.FacebookAuthProvider.credential(data.credentials.token);
-          Firebase.auth().signInWithCredential(credential)
-            .then( response => { 
-                Actions.Home();
-              })
-            .catch( error => { 
-              console.log(error);
-            });
+          FirebaseHelpers.logIn('facebook', {'credential': credential}).then( (user) => {
+            Actions.Home();
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
         }}
       />
     )
