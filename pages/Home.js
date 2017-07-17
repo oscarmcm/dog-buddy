@@ -15,10 +15,9 @@ export default class Home extends Component {
   render() {
     let foo = []
     let pets = realm.objects('Pet');
-    console.log(pets)
-    pets.forEach(function(pet) {
+    pets.forEach( (pet, index) => {
       return foo.push(
-        <View style={styles.slide1}>
+        <View style={styles.slide1} key={index}>
           <Text style={styles.text}>{pet.name}</Text>
         </View>
       )

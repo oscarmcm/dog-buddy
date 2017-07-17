@@ -1,6 +1,15 @@
 'use strict';
 
-import Realm from 'realm'
+import Realm from 'realm';
+
+const UserSchema = {
+  name: 'User',
+  properties: {
+    name:  'string',
+    email: 'string',
+    photo: {type: 'data', optional: true}
+  }
+};
 
 const PetSchema = {
   name: 'Pet',
@@ -24,4 +33,4 @@ const VetSchema = {
   }
 };
 
-export default new Realm({schema: [PetSchema, VetSchema]});
+export default new Realm({schema: [UserSchema, PetSchema, VetSchema]});

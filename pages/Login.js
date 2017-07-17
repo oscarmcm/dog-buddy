@@ -8,6 +8,7 @@ import Button from 'apsl-react-native-button'
 import * as Animatable from 'react-native-animatable';
 import * as Firebase from 'firebase';
 import {GiftedForm, GiftedFormManager} from 'react-native-gifted-form'
+import FirebaseHelpers from "../includes/FirebaseHelpers";
 
 import FBLoginButton from '../components/FBLoginButton'
 import GoogleLoginButton from '../components/GoogleLoginButton'
@@ -21,8 +22,18 @@ export default class Login extends Component {
     showSignUp: false
   }
 
+
   handleLogin = () => {
-    return Actions.Home
+    return Actions.Home();
+  }
+
+  componentWillMount = () => {
+    FirebaseHelpers.currentUser().then( (user) => {
+      Actions.Home();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
   }
 
   onSignIn = () => {
@@ -126,6 +137,7 @@ export default class Login extends Component {
               />
               <GiftedForm.HiddenWidget name='tos' value={true} />
               <FBLoginButton/>
+              <GoogleLoginButton />
             </GiftedForm>
           </Animatable.View>
         : null}

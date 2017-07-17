@@ -7,6 +7,7 @@ import {Actions} from 'react-native-router-flux';
 import SettingsList from 'react-native-settings-list';
 
 import BarTabs from '../components/BarTabs';
+import FirebaseHelpers from "../includes/FirebaseHelpers";
 
 export default class Setting extends Component {
 
@@ -57,6 +58,12 @@ export default class Setting extends Component {
             <SettingsList.Item
               title='Add Veterinary'
               onPress={() => Alert.alert('Route to Blutooth Page')}
+            />
+            <SettingsList.Header headerStyle={{marginTop:5}}/>
+            <SettingsList.Item
+              title='Log Out'
+              titleStyle={{color:'red', textAlign:'center'}}
+              onPress={() => FirebaseHelpers.logOut() }
             />
           </SettingsList>
         </View>

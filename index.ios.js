@@ -1,11 +1,11 @@
 'use strict'
 
 import React, { Component } from 'react';
-import {AppRegistry} from 'react-native';
+import {AppRegistry, Text} from 'react-native';
 
 import {Scene, Router} from 'react-native-router-flux';
 
-import Firebase from "./includes/firebase";
+import FirebaseHelpers from "./includes/FirebaseHelpers";
 
 import FormModal from './components/FormModal';
 
@@ -21,19 +21,17 @@ export default class dogbuddy extends Component {
 
   constructor(props) {
     super(props);
-    Firebase.initialise();
-  }
-
-  state = {
-    showIntro: false,
-    showAuth: true,
-    showHome: null
+    FirebaseHelpers.initialise();
+    this.state = {
+      showIntro: false,
+      showAuth: true,
+      showHome: null,
+      user: null
+    }
   }
 
   componentWillMount = () => {
-    if (this.state.showIntro === false && this.state.showAuth === false) {
-      this.state.showHome = true;
-    }
+    
   }
 
   render = () => {
