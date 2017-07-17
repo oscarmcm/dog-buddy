@@ -12,24 +12,31 @@ import realm from '../realm';
 
 export default class Home extends Component {
 
-  render() {
-    let foo = []
+  state = {
+    pets: []
+  }
+
+  componentDidMount = () => {
     let pets = realm.objects('Pet');
-    console.log(pets)
-    pets.forEach(function(pet) {
-      return foo.push(
-        <View style={styles.slide1}>
+    let petsView = []
+    pets.forEach((pet) => {
+      return petsView.push(
+        <View style={styles.slide1} key={pet.name.toLowerCase()}>
           <Text style={styles.text}>{pet.name}</Text>
         </View>
       )
     })
+    this.setState({pets: petsView})
+  }
+
+  render = () => {
     return (
       <Container style={styles.container}>
         <Swiper style={styles.wrapper}
           paginationStyle={styles.pagination}
           showsButtons={false}
           loop={false}>
-          {foo}
+          {this.state.pets}
         </Swiper>
         <BarTabs selected={'home'} />
       </Container>

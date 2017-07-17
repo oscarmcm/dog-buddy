@@ -9,6 +9,7 @@ import * as Animatable from 'react-native-animatable';
 import BarTabs from '../components/BarTabs';
 import Container from '../components/Container';
 import AddWeight from '../components/AddWeight';
+import AddAppointment from '../components/AddAppointment';
 
 export default class Add extends Component {
 
@@ -23,7 +24,7 @@ export default class Add extends Component {
       case 1:
         return (<Text>He!</Text>)
       case 2:
-        return (<Text>Ha!</Text>)
+        return (<AddAppointment />)
       default:
         return (<AddWeight />)
     }
