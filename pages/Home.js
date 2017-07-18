@@ -12,17 +12,25 @@ import realm from '../realm';
 
 export default class Home extends Component {
 
-  render() {
-    let user = this.props.user;
-    let foo = []
+  state = {
+    pets: []
+  }
+
+  componentDidMount = () => {
     let pets = realm.objects('Pet');
-    pets.forEach( (pet, index) => {
-      return foo.push(
-        <View style={styles.slide1} key={index}>
+    let petsView = []
+    pets.forEach((pet) => {
+      return petsView.push(
+        <View style={styles.slide1} key={pet.name.toLowerCase()}>
           <Text style={styles.text}>{pet.name}</Text>
         </View>
       )
     })
+    this.setState({pets: petsView})
+  }
+
+  render = () => {
+    let user = this.props.user;
     return (
       <Container style={styles.container}>
         <Swiper style={styles.wrapper}
@@ -32,7 +40,7 @@ export default class Home extends Component {
           <View style={styles.slide1}>
             <Text style={styles.welcome}>Welcome {(user.name) ? user.name : "no user"}</Text>
           </View>
-          {foo}
+          {this.state.pets}
         </Swiper>
         <BarTabs selected={'home'} />
       </Container>

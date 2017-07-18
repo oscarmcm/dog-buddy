@@ -3,81 +3,65 @@
 import React, { Component } from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
+import {Agenda} from 'react-native-calendars';
+
 import BarTabs from '../components/BarTabs';
 
-import {Agenda} from 'react-native-calendars';
+import realm from '../realm';
 
 export default class Calendar extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: {}
-    };
+  state = {
+    items: {}
   }
 
-  render() {
-    const today = new Date();
+  componentDidMount = () => {
+    let items = {};
+    let appointments = realm.objects('Appointment');
+    appointments.forEach((item) => {
+      let date = this.timeToString(item.date);
+      if (items[date]) {
+        items[date].push({title: item.title, text: item.description})
+      } else {
+        return items[date] = [{title: item.title, text: item.description}]
+      }
+    })
+    this.setState({items: items});
+  }
+
+  render = () => {
+    const currentDay = new Date().toISOString().substring(0, 10);
     return (
       <View style={{flex:1}}>
         <Agenda
           items={this.state.items}
-          loadItemsForMonth={this.loadItems.bind(this)}
-          selected={today.toISOString().substring(0, 10)}
-          renderItem={this.renderItem.bind(this)}
-          renderEmptyDate={this.renderEmptyDate.bind(this)}
-          rowHasChanged={this.rowHasChanged.bind(this)}
-          // theme={{calendarBackground: 'red'}}
-          // renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
+          selected={currentDay}
+          renderItem={this.renderItem}
+          renderEmptyDate={this.renderEmptyDate}
+          rowHasChanged={this.rowHasChanged}
         />
         <BarTabs selected={'cal'}/>
       </View>
     );
   }
 
-  loadItems(day) {
-    setTimeout(() => {
-      for (let i = -15; i < 85; i++) {
-        const time = day.timestamp + i * 24 * 60 * 60 * 1000;
-        const strTime = this.timeToString(time);
-        if (!this.state.items[strTime]) {
-          this.state.items[strTime] = [];
-          const numItems = Math.floor(Math.random() * 5);
-          for (let j = 0; j < numItems; j++) {
-            this.state.items[strTime].push({
-              name: 'Item for ' + strTime,
-              height: Math.max(50, Math.floor(Math.random() * 150))
-            });
-          }
-        }
-      }
-      //console.log(this.state.items);
-      const newItems = {};
-      Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
-      this.setState({
-        items: newItems
-      });
-    }, 1000);
-    // console.log(`Load Items for ${day.year}-${day.month}`);
-  }
-
-  renderItem(item) {
+  renderItem = (item) => {
     return (
-      <View style={[styles.item, {height: item.height}]}><Text>{item.name}</Text></View>
+      <View style={[styles.item]}><Text>{item.title} - {item.text}</Text></View>
     );
   }
 
-  renderEmptyDate() {
+  renderEmptyDate = () => {
     return (
       <View style={styles.emptyDate}><Text>This is empty date!</Text></View>
     );
   }
 
-  rowHasChanged(r1, r2) {
+  rowHasChanged = (r1, r2) => {
     return r1.name !== r2.name;
   }
 
-  timeToString(time) {
+  timeToString = (time) => {
     const date = new Date(time);
     return date.toISOString().split('T')[0];
   }

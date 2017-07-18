@@ -79,11 +79,11 @@ export default class AddPet extends Component {
             onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
               if (isValid === true) {
                 values.weight = parseFloat(values.weight);
-                values.sex[0] === "M" ? values.sex = true : values.sex = false;
+                values.sex[0] === 'M' ? values.sex = true : values.sex = false;
                 realm.write(() => { realm.create('Pet', values);});
                 postSubmit();
                 GiftedFormManager.reset('addPetForm');
-                return Actions.popTo("Home")
+                return Actions.popTo('Home')
               }
             }}
           />

@@ -49,7 +49,7 @@ export default class Login extends Component {
     })
   }
 
-  render() {
+  render = () => {
     return (
       <BackgroundImage path={require('../images/login_bck.jpg')}>
         <View style={styles.container}>

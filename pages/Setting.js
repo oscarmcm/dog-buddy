@@ -28,7 +28,7 @@ export default class Setting extends Component {
     this.setState({switchValue: value});
   }
 
-  render() {
+  render = () => {
     let bgColor = '#DCE3F4';
     return (
       <View style={{backgroundColor:'#EFEFF4',flex:1}}>

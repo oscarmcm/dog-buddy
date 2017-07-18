@@ -30,7 +30,8 @@ export default class FirebaseHelpers {
       }
 
       try {
-        return AsyncStorage.setItem('user', JSON.stringify(user_object));
+        AsyncStorage.setItem('user', JSON.stringify(user_object));
+        return user_object;
       } catch (error) {
         console.log('Error saving data: ' + error);
       }
@@ -55,7 +56,7 @@ export default class FirebaseHelpers {
               case 'google.com':
                 console.log(method);
                 Firebase.auth().signInWithCredential(params.credential)
-                .then( user => { 
+                .then( user => {
                   resolve(this.storeUser(user, method));
                 })
                 .catch( error => { 
