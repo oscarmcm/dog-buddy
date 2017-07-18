@@ -16,8 +16,8 @@ export default class FBLoginButton extends Component {
         loginBehavior={FBLoginManager.LoginBehaviors.Native}
         onLogin={ data => {
           const credential = Firebase.auth.FacebookAuthProvider.credential(data.credentials.token);
-          FirebaseHelpers.logIn('facebook', {'credential': credential}).then( (user) => {
-            Actions.Home();
+          FirebaseHelpers.logIn('facebook.com', {'credential': credential}).then( (user) => {
+            Actions.Home({user});
           })
           .catch(function (err) {
             console.log(err);

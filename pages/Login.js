@@ -19,17 +19,16 @@ export default class Login extends Component {
 
   state = {
     showSignIn: false,
-    showSignUp: false
-  }
-
-
-  handleLogin = () => {
-    return Actions.Home();
+    showSignUp: false,
   }
 
   componentWillMount = () => {
     FirebaseHelpers.currentUser().then( (user) => {
-      Actions.Home();
+      if (user) {
+        user = JSON.parse(user);
+        console.log(user);
+        Actions.Home({user});
+      }
     })
     .catch(function (err) {
       console.log(err);
@@ -124,7 +123,8 @@ export default class Login extends Component {
                     }).then( (user) => {
                       postSubmit();
                       GiftedFormManager.reset('signInForm');
-                      Actions.Home();
+                      let stored_user = FirebaseHelpers.storeUser(user, 'email');
+                      Actions.Home({user: stored_user});
                     })
                     .catch(function (error) {
                       postSubmit([error.toString()]);
@@ -205,10 +205,11 @@ export default class Login extends Component {
                 onSubmit={(isValid, values, validationResults, postSubmit = null, modalNavigator = null) => {
                   if (isValid === true) {
                     Firebase.auth().createUserWithEmailAndPassword(values.emailAddress, values.password)
-                    .then( response => {
+                    .then( user => {
                       postSubmit();
                       GiftedFormManager.reset('signUpForm');
-                      Actions.Home();
+                      let stored_user = FirebaseHelpers.storeUser(user, 'email');
+                      Actions.Home({user: stored_user});
                     })
                     .catch( error => {
                       postSubmit([error.toString()]);

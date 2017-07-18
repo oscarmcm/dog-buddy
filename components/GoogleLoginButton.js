@@ -16,8 +16,8 @@ export default class GoogleLoginButton extends Component {
 
   firebaseGoogleLogin = (token) => {
     const credential = Firebase.auth.GoogleAuthProvider.credential(token);
-    FirebaseHelpers.logIn('google', {'credential': credential}).then( (user) => {
-      Actions.Home();
+    FirebaseHelpers.logIn('google.com', {'credential': credential}).then( (user) => {
+      Actions.Home({user});
     })
     .catch(function (err) {
       console.log(err);

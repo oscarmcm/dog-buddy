@@ -13,6 +13,7 @@ import realm from '../realm';
 export default class Home extends Component {
 
   render() {
+    let user = this.props.user;
     let foo = []
     let pets = realm.objects('Pet');
     pets.forEach( (pet, index) => {
@@ -28,6 +29,9 @@ export default class Home extends Component {
           paginationStyle={styles.pagination}
           showsButtons={false}
           loop={false}>
+          <View style={styles.slide1}>
+            <Text style={styles.welcome}>Welcome {(user.name) ? user.name : "no user"}</Text>
+          </View>
           {foo}
         </Swiper>
         <BarTabs selected={'home'} />
@@ -64,6 +68,11 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 30,
+    fontWeight: 'bold'
+  },
+  welcome: {
+    color: '#333',
+    fontSize: 20,
     fontWeight: 'bold'
   }
 });

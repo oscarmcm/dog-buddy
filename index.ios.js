@@ -30,10 +30,6 @@ export default class dogbuddy extends Component {
     }
   }
 
-  componentWillMount = () => {
-    
-  }
-
   render = () => {
     const {showIntro, showAuth, showHome} = this.state;
     return (

@@ -2,17 +2,6 @@
 
 import Realm from 'realm';
 
-const UserSchema = {
-  name: 'User',
-  properties: {
-    name:  'string',
-    email: 'string',
-    photo: {type: 'data', optional: true},
-    // login_method: 'string',
-    // firebase_id: 'string',
-  }
-};
-
 const PetSchema = {
   name: 'Pet',
   properties: {
@@ -35,4 +24,4 @@ const VetSchema = {
   }
 };
 
-export default new Realm({schema: [UserSchema, PetSchema, VetSchema]});
+export default new Realm({schema: [PetSchema, VetSchema]});
