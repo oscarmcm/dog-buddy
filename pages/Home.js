@@ -30,12 +30,16 @@ export default class Home extends Component {
   }
 
   render = () => {
+    let user = this.props.user;
     return (
       <Container style={styles.container}>
         <Swiper style={styles.wrapper}
           paginationStyle={styles.pagination}
           showsButtons={false}
           loop={false}>
+          <View style={styles.slide1}>
+            <Text style={styles.welcome}>Welcome {(user.name) ? user.name : "no user"}</Text>
+          </View>
           {this.state.pets}
         </Swiper>
         <BarTabs selected={'home'} />
@@ -72,6 +76,11 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: 30,
+    fontWeight: 'bold'
+  },
+  welcome: {
+    color: '#333',
+    fontSize: 20,
     fontWeight: 'bold'
   }
 });

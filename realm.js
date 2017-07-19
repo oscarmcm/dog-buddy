@@ -1,6 +1,6 @@
 'use strict';
 
-import Realm from 'realm'
+import Realm from 'realm';
 
 const PetSchema = {
   name: 'Pet',
